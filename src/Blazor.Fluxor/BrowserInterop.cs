@@ -24,9 +24,7 @@ namespace Blazor.Fluxor
 
 			return $@"
 setTimeout(function() {{
-	if (window.DotNet) {{
-		DotNet.invokeMethodAsync('{assemblyName}', '{OnPageLoadedId}');
-	}}
+	DotNet.invokeMethodAsync('{assemblyName}', '{OnPageLoadedId}');
 }}, 0);
 ";
 		}

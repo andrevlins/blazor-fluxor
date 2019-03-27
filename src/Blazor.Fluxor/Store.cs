@@ -133,13 +133,13 @@ namespace Blazor.Fluxor
 					if (middlewareScript != null)
 					{
 						renderer.OpenElement(sequence, "script");
-						renderer.AddMarkupContent(sequence, $"// Middleware scripts: {middleware.GetType().FullName}\r\n{middlewareScript}");
+						renderer.AddContent(sequence, $"// Middleware scripts: {middleware.GetType().FullName}\r\n{middlewareScript}");
 						renderer.CloseElement();
 					}
 				}
 
 				renderer.OpenElement(sequence++, "script");
-				renderer.AddMarkupContent(sequence, GetClientScripts());
+				renderer.AddContent(sequence, GetClientScripts());
 				renderer.CloseElement();
 			};
 		}
